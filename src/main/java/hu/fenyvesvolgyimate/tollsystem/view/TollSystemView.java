@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class TollSystemView {
     TollSystemController controller;
 
+    public TollSystemView(TollSystemController tollSystemController){
+        this.controller = tollSystemController;
+    }
+
     public void start(){
         sc = new Scanner(System.in);
         String command = null;
