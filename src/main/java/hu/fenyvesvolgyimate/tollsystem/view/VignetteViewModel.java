@@ -7,6 +7,7 @@ public class VignetteViewModel {
     Date dateOfPurchase;
     Date validFrom;
     Date validTo;
+    boolean isValid;
 
     public String getVehicleCategory() {
         return vehicleCategory;
@@ -38,5 +39,9 @@ public class VignetteViewModel {
 
     public void setValidTo(Date validTo) {
         this.validTo = validTo;
+    }
+
+    public void setIsValid(boolean isValid) {
+        this.isValid = isValid;
     }
 }

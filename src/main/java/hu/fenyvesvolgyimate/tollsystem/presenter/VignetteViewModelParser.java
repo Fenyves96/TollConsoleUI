@@ -46,12 +46,19 @@ public class VignetteViewModelParser {
         Date validFrom = jsonParser.parseDateByKey(jsonObject, "validFrom");
         Date validTo = jsonParser.parseDateByKey(jsonObject, "validTo");
         String vehicleCategory = jsonParser.parseString(jsonObject, "vehicleCategory");
+        boolean isValid = false;
+        try {
+            isValid = jsonObject.getBoolean("isValid");
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
 
         VignetteViewModel vignetteViewModel = new VignetteViewModel();
         vignetteViewModel.setDateOfPurchase(dateOfPurchase);
         vignetteViewModel.setValidFrom(validFrom);
         vignetteViewModel.setValidTo(validTo);
         vignetteViewModel.setVehicleCategory(vehicleCategory);
+        vignetteViewModel.setIsValid(isValid);
         return vignetteViewModel;
     }
 

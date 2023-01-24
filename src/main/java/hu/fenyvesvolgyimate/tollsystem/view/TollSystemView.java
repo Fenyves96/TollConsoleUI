@@ -46,8 +46,8 @@ public class TollSystemView {
         );
         viewModel.getVignettes().forEach(v -> {
             System.out.println(
-                    MessageFormat.format("[{0}][{1}][{2}][{3}]",
-                            v.validFrom, v.validTo, v.getVehicleCategory(), v.getDateOfPurchase()));
+                    MessageFormat.format("[{0}][{1}][{2}][{3}][{4}]",
+                            v.isValid? "X":" ",v.validFrom, v.validTo, v.getVehicleCategory(), v.getDateOfPurchase()));
         });
 
         System.out.println();
